@@ -4,10 +4,13 @@
   class RomanNumeralConvertor {
 
     public function convert($arabic) {
+      $numerals = array(1 => 'I',
+      5 => 'V',
+      10 => 'X');
 
-      if($arabic == 1) {
-        return 'I';
-      } else if ($arabic == 5) {
+      if($numerals[$arabic] == 'I') {
+        return $numerals[$arabic];
+      } else if ($numerals[$arabic]== 'V') {
         return 'V';
       }
       return 'X';
