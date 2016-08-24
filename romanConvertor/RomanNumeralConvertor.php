@@ -5,13 +5,25 @@
 
     public function convert($arabic) {
       $numerals = array(1 => 'I',
+      4 => 'IV',
       5 => 'V',
-      10 => 'X');
+      9 => 'IX',
+      10 => 'X',
+      50 => 'L',
+      90 => 'XC',
+      100 => 'C',
+      900 => 'CM',
+      1000 => 'M');
 
-      foreach($numerals as $key=>$value) {
-        if($key == $arabic) {
-          return $value;
+      $reversed = array_reverse($numerals, true);
+      $result = '';
+
+      foreach($reversed as $key=>$value) {
+        while($arabic >= $key) {
+          $arabic = $arabic - $key;
+          $result = $result . $value;
         }
       }
+      return $result;
     }
   }
