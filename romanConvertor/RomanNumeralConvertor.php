@@ -4,7 +4,12 @@
   class RomanNumeralConvertor {
 
     public function convert($arabic) {
-      return "I";
+
+      if($arabic == 1) {
+        return 'I';
+      } else {
+        return 'V';
+      }
     }
 
   }

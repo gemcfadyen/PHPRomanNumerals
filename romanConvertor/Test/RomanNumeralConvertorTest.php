@@ -10,4 +10,10 @@
       $numeral = $convertor->convert(1);
       $this->assertEquals('I', $numeral);
     }
+
+    public function testConverts5ToV() {
+      $convertor = new RomanNumeralConvertor();
+      $numeral = $convertor->convert(5);
+      $this->assertEquals('V', $numeral);
+    }
   }
