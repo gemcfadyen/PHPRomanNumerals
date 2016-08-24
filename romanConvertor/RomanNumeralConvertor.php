@@ -8,12 +8,10 @@
       5 => 'V',
       10 => 'X');
 
-      if($numerals[$arabic] == 'I') {
-        return $numerals[$arabic];
-      } else if ($numerals[$arabic]== 'V') {
-        return 'V';
+      foreach($numerals as $key=>$value) {
+        if($key == $arabic) {
+          return $value;
+        }
       }
-      return 'X';
     }
-
   }
