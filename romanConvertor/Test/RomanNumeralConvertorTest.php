@@ -16,4 +16,10 @@
       $numeral = $convertor->convert(5);
       $this->assertEquals('V', $numeral);
     }
+
+    public function testConverts10ToX() {
+      $convertor = new RomanNumeralConvertor();
+      $numeral = $convertor->convert(10);
+      $this->assertEquals('X', $numeral);
+    }
   }
