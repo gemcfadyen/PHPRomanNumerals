@@ -5,21 +5,22 @@
 
   class RomanNumeralConvertorTest extends \PHPUnit_Framework_TestCase {
 
+    public function setUp() {
+      $this->convertor = new RomanNumeralConvertor();
+    }
+
     public function testConverts1ToI() {
-      $convertor = new RomanNumeralConvertor();
-      $numeral = $convertor->convert(1);
+      $numeral = $this->convertor->convert(1);
       $this->assertEquals('I', $numeral);
     }
 
     public function testConverts5ToV() {
-      $convertor = new RomanNumeralConvertor();
-      $numeral = $convertor->convert(5);
+      $numeral = $this->convertor->convert(5);
       $this->assertEquals('V', $numeral);
     }
 
     public function testConverts10ToX() {
-      $convertor = new RomanNumeralConvertor();
-      $numeral = $convertor->convert(10);
+      $numeral = $this->convertor->convert(10);
       $this->assertEquals('X', $numeral);
     }
   }
