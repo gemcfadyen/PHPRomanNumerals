@@ -5,16 +5,10 @@
   use Behat\Gherkin\Node\TableNode;
   use Behat\Behat\Tester\Exception\PendingException;
   use romanConvertor\RomanNumeralConvertor;
+  class_alias(PHPUnit_Framework_Assert, 'phpassert');
 
   class FeatureContext implements SnippetAcceptingContext
   {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets it's own context object.
-     * You can also pass arbitrary arguments to the context constructor through behat.yml.
-     */
-
     private $convertor;
     private $dateToConvert;
     private $result;
@@ -41,6 +35,6 @@
      * @Then I should get :numeral
      */
     public function iShouldGet($numeral) {
-      PHPUnit_Framework_Assert::assertEquals($numeral, $this->result);
+      phpassert::assertEquals($numeral, $this->result);
     }
   }
